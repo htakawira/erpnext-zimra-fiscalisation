@@ -1,0 +1,174 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Fiscal Receipt",
+  "module": "ERPNext ZIMRA",
+  "autoname": "field:receipt_key",
+  "title_field": "receipt_key",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "receipt_key",
+      "label": "Receipt Key",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "sales_invoice",
+      "label": "Sales Invoice",
+      "fieldtype": "Link",
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "fiscal_day",
+      "label": "Fiscal Day",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Day",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_type",
+      "label": "Receipt Type",
+      "fieldtype": "Select",
+      "options": "FiscalInvoice\nCreditNote\nDebitNote",
+      "default": "FiscalInvoice",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_currency",
+      "label": "Currency",
+      "fieldtype": "Link",
+      "options": "Currency",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_counter",
+      "label": "Receipt Counter",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_global_no",
+      "label": "Receipt Global Number",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "invoice_no",
+      "label": "Invoice Number",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_date",
+      "label": "Receipt Date",
+      "fieldtype": "Datetime",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_total",
+      "label": "Receipt Total",
+      "fieldtype": "Currency",
+      "reqd": 1
+    },
+    {
+      "fieldname": "receipt_payload",
+      "label": "Receipt Payload JSON",
+      "fieldtype": "Code",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "receipt_hash",
+      "label": "Receipt Hash (Base64)",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "previous_receipt_hash",
+      "label": "Previous Receipt Hash",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "device_signature",
+      "label": "Device Signature (Base64)",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "fdms_receipt_id",
+      "label": "FDMS Receipt ID",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "server_signature",
+      "label": "FDMS Receipt Signature",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "server_date",
+      "label": "FDMS Server Date",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "operation_id",
+      "label": "Operation ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "submission_mode",
+      "label": "Submission Mode",
+      "fieldtype": "Select",
+      "options": "Automatic\nManual",
+      "default": "Automatic"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nQueued\nSubmitting\nAccepted\nRejected\nRetry\nCancelled",
+      "default": "Draft",
+      "reqd": 1
+    },
+    {
+      "fieldname": "validation_errors",
+      "label": "Validation Errors",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "last_error",
+      "label": "Last Error",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
