@@ -1,0 +1,111 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Offline Queue",
+  "module": "ERPNext ZIMRA",
+  "autoname": "field:queue_key",
+  "title_field": "queue_key",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "queue_key",
+      "label": "Queue Key",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day",
+      "label": "Fiscal Day",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Day"
+    },
+    {
+      "fieldname": "receipt",
+      "label": "Fiscal Receipt",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Receipt"
+    },
+    {
+      "fieldname": "sequence_no",
+      "label": "Sequence Number",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "request_type",
+      "label": "Request Type",
+      "fieldtype": "Select",
+      "options": "Open Day\nSubmit Receipt\nClose Day",
+      "reqd": 1
+    },
+    {
+      "fieldname": "request_payload",
+      "label": "Request Payload",
+      "fieldtype": "Code",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "status",
+      "label": "Queue Status",
+      "fieldtype": "Select",
+      "options": "Pending\nProcessing\nCompleted\nFailed\nBlocked",
+      "default": "Pending",
+      "reqd": 1
+    },
+    {
+      "fieldname": "attempts",
+      "label": "Attempts",
+      "fieldtype": "Int",
+      "default": "0"
+    },
+    {
+      "fieldname": "next_attempt_at",
+      "label": "Next Attempt At",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "response_payload",
+      "label": "Response Payload",
+      "fieldtype": "Code",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "last_error",
+      "label": "Last Error",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
