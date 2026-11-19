@@ -1,0 +1,101 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Fiscal Day",
+  "module": "ERPNext ZIMRA",
+  "autoname": "field:device_fiscal_day_key",
+  "title_field": "device_fiscal_day_key",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "device_fiscal_day_key",
+      "label": "Device Fiscal Day Key",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day_no",
+      "label": "Fiscal Day Number",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day_opened",
+      "label": "Fiscal Day Opened",
+      "fieldtype": "Datetime",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day_updated",
+      "label": "Fiscal Day Updated",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "status",
+      "label": "FDMS Status",
+      "fieldtype": "Select",
+      "options": "Pending Open\nFiscalDayOpened\nFiscalDayCloseInitiated\nFiscalDayClosed\nFiscalDayCloseFailed\nOpen Failed",
+      "default": "Pending Open"
+    },
+    {
+      "fieldname": "reconciliation_mode",
+      "label": "Reconciliation Mode",
+      "fieldtype": "Select",
+      "options": "AUTO\nMANUAL",
+      "default": "AUTO"
+    },
+    {
+      "fieldname": "device_signature",
+      "label": "Device Signature",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "server_signature",
+      "label": "FDMS Signature",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "close_operation_id",
+      "label": "Close Operation ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "last_error",
+      "label": "Last Error",
+      "fieldtype": "Small Text"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
