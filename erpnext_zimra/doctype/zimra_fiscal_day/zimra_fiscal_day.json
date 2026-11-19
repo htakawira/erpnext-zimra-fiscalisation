@@ -1,0 +1,81 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Fiscal Day",
+  "module": "ERPNext ZIMRA",
+  "issingle": 0,
+  "autoname": "field:device_name",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "fiscal_device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day_no",
+      "label": "Fiscal Day Number",
+      "fieldtype": "Int",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day_opened",
+      "label": "Fiscal Day Opened",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "operation_id",
+      "label": "Operation ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending Open\nFiscalDayOpened\nFiscalDayCloseInitiated\nFiscalDayClosed\nFiscalDayCloseFailed\nOpen Failed",
+      "default": "Pending Open"
+    },
+    {
+      "fieldname": "device_signature",
+      "label": "Device Signature",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "server_signature",
+      "label": "Server Signature",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "reconciliation_mode",
+      "label": "Reconciliation Mode",
+      "fieldtype": "Select",
+      "options": "AUTO\nMANUAL",
+      "default": "AUTO"
+    },
+    {
+      "fieldname": "close_operation_id",
+      "label": "Close Operation ID",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
