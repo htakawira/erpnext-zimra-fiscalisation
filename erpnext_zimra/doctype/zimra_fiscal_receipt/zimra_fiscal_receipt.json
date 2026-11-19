@@ -1,0 +1,94 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Fiscal Receipt",
+  "module": "ERPNext ZIMRA",
+  "issingle": 0,
+  "autoname": "field:device_name",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "sales_invoice",
+      "label": "Sales Invoice",
+      "fieldtype": "Link",
+      "options": "Sales Invoice"
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company"
+    },
+    {
+      "fieldname": "fiscal_device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day",
+      "label": "Fiscal Day",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Day"
+    },
+    {
+      "fieldname": "request_mode",
+      "label": "Request Mode",
+      "fieldtype": "Select",
+      "options": "Automatic\nManual",
+      "default": "Automatic"
+    },
+    {
+      "fieldname": "request_payload",
+      "label": "Request Payload JSON",
+      "fieldtype": "Code",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "receipt_id",
+      "label": "FDMS Receipt ID",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "operation_id",
+      "label": "Operation ID",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "server_date",
+      "label": "Server Date",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "server_signature",
+      "label": "Server Signature",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Draft\nQueued\nSubmitting\nAccepted\nRejected\nFailed",
+      "default": "Draft"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
