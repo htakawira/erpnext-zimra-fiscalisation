@@ -23,7 +23,7 @@ class TestZimraCrypto(unittest.TestCase):
                    "receiptTaxes":[
                     {"taxID":2,"taxCode":"B","taxPercent":0,"taxAmount":"0","salesAmountWithTax":"10"},
                     {"taxID":1,"taxCode":"A","taxPercent":None,"taxAmount":"0","salesAmountWithTax":"7"}]}
-        expected = "322FISCALINVOICEUSD852019-09-19T09:23:075150A000700B00001000"
+        expected = "322FISCALINVOICEUSD852019-09-19T09:23:075150A0700B001000"
         self.assertEqual(receipt_signature_input(322, receipt), expected)
         self.assertTrue(receipt_signature_input(322, receipt, "PREV").endswith("PREV"))
 
