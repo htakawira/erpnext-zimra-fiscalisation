@@ -1,7 +1,7 @@
 {
   "doctype": "DocType",
   "name": "ZIMRA Fiscal Device",
-  "module": "ERPNext ZIMRA",
+  "module": "ZIMRA Fiscalisation",
   "issingle": 0,
   "autoname": "field:device_name",
   "track_changes": 1,
