@@ -1,0 +1,77 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Offline Queue",
+  "module": "ERPNext ZIMRA",
+  "issingle": 0,
+  "autoname": "field:device_name",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "fiscal_device",
+      "label": "Fiscal Device",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Device",
+      "reqd": 1
+    },
+    {
+      "fieldname": "fiscal_day",
+      "label": "Fiscal Day",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Day"
+    },
+    {
+      "fieldname": "fiscal_receipt",
+      "label": "Fiscal Receipt",
+      "fieldtype": "Link",
+      "options": "ZIMRA Fiscal Receipt"
+    },
+    {
+      "fieldname": "queue_type",
+      "label": "Queue Type",
+      "fieldtype": "Select",
+      "options": "Open Day\nReceipt\nClose Day",
+      "reqd": 1
+    },
+    {
+      "fieldname": "status",
+      "label": "Status",
+      "fieldtype": "Select",
+      "options": "Pending\nProcessing\nSent\nFailed",
+      "default": "Pending"
+    },
+    {
+      "fieldname": "sent_at",
+      "label": "Sent At",
+      "fieldtype": "Datetime"
+    },
+    {
+      "fieldname": "error",
+      "label": "Error",
+      "fieldtype": "Small Text"
+    },
+    {
+      "fieldname": "sequence_no",
+      "label": "Sequence Number",
+      "fieldtype": "Int"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
