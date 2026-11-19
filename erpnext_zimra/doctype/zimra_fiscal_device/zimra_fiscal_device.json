@@ -1,0 +1,135 @@
+{
+  "doctype": "DocType",
+  "name": "ZIMRA Fiscal Device",
+  "module": "ERPNext ZIMRA",
+  "issingle": 0,
+  "autoname": "field:device_name",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "device_name",
+      "label": "Device Name",
+      "fieldtype": "Data",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "company",
+      "label": "Company",
+      "fieldtype": "Link",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "branch",
+      "label": "Branch",
+      "fieldtype": "Link",
+      "options": "Cost Center"
+    },
+    {
+      "fieldname": "device_id",
+      "label": "ZIMRA Device ID",
+      "fieldtype": "Int",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "device_serial_no",
+      "label": "Device Serial Number",
+      "fieldtype": "Data",
+      "reqd": 1
+    },
+    {
+      "fieldname": "activation_key",
+      "label": "Activation Key",
+      "fieldtype": "Password"
+    },
+    {
+      "fieldname": "device_model_name",
+      "label": "Device Model Name",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "device_model_version_no",
+      "label": "Device Model Version",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "enabled",
+      "label": "Enabled",
+      "fieldtype": "Check",
+      "default": "1"
+    },
+    {
+      "fieldname": "integration_mode",
+      "label": "Integration Mode",
+      "fieldtype": "Select",
+      "options": "Automatic\nManual",
+      "default": "Automatic"
+    },
+    {
+      "fieldname": "operating_mode",
+      "label": "FDMS Operating Mode",
+      "fieldtype": "Select",
+      "options": "Online\nOffline",
+      "default": "Online",
+      "read_only": 1
+    },
+    {
+      "fieldname": "client_certificate_path",
+      "label": "Client Certificate Path",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "private_key_path",
+      "label": "Private Key Path",
+      "fieldtype": "Data"
+    },
+    {
+      "fieldname": "certificate",
+      "label": "Device Certificate PEM",
+      "fieldtype": "Long Text"
+    },
+    {
+      "fieldname": "registration_status",
+      "label": "Registration Status",
+      "fieldtype": "Select",
+      "options": "Not Registered\nPending\nRegistered\nFailed",
+      "default": "Not Registered"
+    },
+    {
+      "fieldname": "last_fiscal_day_no",
+      "label": "Last Fiscal Day Number",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "last_receipt_global_no",
+      "label": "Last Receipt Global Number",
+      "fieldtype": "Int"
+    },
+    {
+      "fieldname": "last_receipt_hash",
+      "label": "Last Receipt Hash",
+      "fieldtype": "Data"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "report": 1,
+      "share": 1,
+      "export": 1
+    },
+    {
+      "role": "Accounts Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "report": 1
+    }
+  ]
+}
